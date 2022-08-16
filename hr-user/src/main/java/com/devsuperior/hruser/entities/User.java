@@ -10,11 +10,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
 
+    //E-mail nao pode se repetir.
+    @Column(unique = true)
     private String email;
-
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
